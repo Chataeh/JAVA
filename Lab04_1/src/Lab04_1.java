@@ -63,10 +63,14 @@ class Rectangle{
 	
 	boolean equals(Rectangle r)
 	{
-		if(this.getArea()==r.getArea())
+		
+		
+		if(Math.abs(x1-x2)==Math.abs(r.x1-r.x2)&&Math.abs(y1-y2)==Math.abs(r.y1-r.y2))
 			return true;
 		else
 			return false;
+			
+		
 	}
 }
 
