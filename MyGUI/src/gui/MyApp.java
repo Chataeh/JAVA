@@ -16,10 +16,10 @@ public class MyApp extends JFrame{
 		
 		cp.setLayout(new FlowLayout());
 		
-		
+		cp.setBackground(Color.RED);
 	}
 	
-
+	
 	
 	public static void main(String[] args) {
 		new MyApp().setVisible(true);//그래픽 유저인터페이스는 굳이 래퍼런스 변수 생성 필요x

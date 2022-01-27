@@ -2,6 +2,7 @@
 public class Prime_Number {
 
 	public static void main(String[] args) {
+		SyncObject sObj=new SyncObject();
 		int[] array=new int[10000];
 		for(int k=0;k<array.length;k++)
 		{
@@ -50,11 +51,11 @@ public class Prime_Number {
 		catch(Exception e) {
 			
 		}
-		
 		for(int i=0;i<array.length;i++)
 		{
 			System.out.println(array[i]);
 		}
+		
 	}
 	
 	
@@ -78,7 +79,6 @@ class SyncObject
 						else
 						{
 							array[j]=i;
-							//System.out.println(i);
 							if(array[9999]!=0)
 								break;
 							if(array[j]!=0)
@@ -91,6 +91,13 @@ class SyncObject
 			i++;
 			if(array[9999]!=0)
 				break;
+		}
+	}
+	synchronized void print(int[] array)
+	{
+		for(int i=0;i<array.length;i++)
+		{
+			System.out.println("Thread"+Thread.currentThread().getName()+" : "+array[i]);
 		}
 	}
 }
@@ -109,11 +116,8 @@ class findThread extends Thread
 	
 	public void run()
 	{
-		
+
 		sObj.find(array);
-		/*for(int i=0;i<array.length;i++)
-		{
-			System.out.println(array[i]);
-		}*/
+		//sObj.print(array);
 	}
 }
