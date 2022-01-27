@@ -90,7 +90,7 @@ public class Lab10_2 {
 			}
 			
 		}
-
+		
 		//maxindex=Collections.max(st);
 		Collections.sort(st);
 		
